@@ -11,59 +11,59 @@ import com.amazonaws.services.ec2.model.NetworkAclEntry;
 
 public class InitBelief {
 
-	public static void main(String[] args) {
+	public static void main(String[] args) 
+	{		
+    	   AmazonEC2 Builder = AmazonEC2ClientBuilder.standard().withRegion("us-east-1").build();
+           DescribeNetworkAclsResult All_NACLS = Builder.describeNetworkAcls();		
+	   ArrayList<List<String>> NACL_List = new ArrayList<List<String>>();
 		
-    	AmazonEC2 Builder = AmazonEC2ClientBuilder.standard().withRegion("us-east-1").build();
-        DescribeNetworkAclsResult All_NACLS = Builder.describeNetworkAcls();		
-		ArrayList<List<String>> NACL_List = new ArrayList<List<String>>();
-		
-		boolean TestFile = false;
-		try {	    	   
-            File BeliefFile = new File("beliefConf.pl"); 
-            if (BeliefFile.exists()){
-            	if(BeliefFile.length() > 5)
+	   boolean TestFile = false;
+	   try {	    	   
+               File BeliefFile = new File("beliefConf.pl"); 
+               if (BeliefFile.exists()){
+            	   if(BeliefFile.length() > 5)
             		TestFile = true;
-            }
-		}catch (Exception e) {}
+                }
+	    }catch (Exception e) {}
 		
-		for(NetworkAcl AclEntries : All_NACLS.getNetworkAcls())
-		{
-			for (NetworkAclEntry EntryByEntry : AclEntries.getEntries())
-			{
-				ArrayList<String> ListOfEntries = new ArrayList<String>();						
-				ListOfEntries.add(AclEntries.getNetworkAclId().toString());
-				ListOfEntries.add(EntryByEntry.getCidrBlock().toString());
-				if(EntryByEntry.getEgress() == true)
-					ListOfEntries.add("egress");
-				else
-					ListOfEntries.add("ingress");
-				ListOfEntries.add(EntryByEntry.getRuleAction());
-				ListOfEntries.add(EntryByEntry.getRuleNumber().toString());
+	    for(NetworkAcl AclEntries : All_NACLS.getNetworkAcls())
+	    {
+	       for (NetworkAclEntry EntryByEntry : AclEntries.getEntries())
+	       {
+		    ArrayList<String> ListOfEntries = new ArrayList<String>();						
+		    ListOfEntries.add(AclEntries.getNetworkAclId().toString());
+		    ListOfEntries.add(EntryByEntry.getCidrBlock().toString());
+		    if(EntryByEntry.getEgress() == true)
+			ListOfEntries.add("egress");
+		    else
+			ListOfEntries.add("ingress");
+		    ListOfEntries.add(EntryByEntry.getRuleAction());
+		    ListOfEntries.add(EntryByEntry.getRuleNumber().toString());
 
-				String PortRange = PortRangeCorrection(EntryByEntry.toString());
-				if(PortRange == "")
-				{
-					ListOfEntries.add("-1");
-					ListOfEntries.add("-1");
-				}
-				else{
-					PortRange = PortRange.replace("From: ", "");
-					PortRange = PortRange.replace("To: ", "");
-					String Temp[] = PortRange.split(",");
-					ListOfEntries.add(Temp[0]);	
-					ListOfEntries.add(Temp[1]);	
-				}					
-				NACL_List.add(ListOfEntries); 
-				
-				if (TestFile == false)
-					CreateBelief(ListOfEntries);
-			}	
-			System.out.println("Done running. Check 'workspace' folder (i.e working directory) for beliefConf.pl file");
-		}	
-	}
+		    String PortRange = PortRangeCorrection(EntryByEntry.toString());
+		    if(PortRange == "")
+		    {
+			ListOfEntries.add("-1");
+			ListOfEntries.add("-1");
+		    }
+		    else{
+			  PortRange = PortRange.replace("From: ", "");					
+			  PortRange = PortRange.replace("To: ", "");
+			  String Temp[] = PortRange.split(",");
+			  ListOfEntries.add(Temp[0]);	
+			  ListOfEntries.add(Temp[1]);	
+		    }									
+		    NACL_List.add(ListOfEntries); 
+		       
+		    if (TestFile == false)
+			 CreateBelief(ListOfEntries);
+	     }	
+	     System.out.println("Done running. Check 'workspace' folder (i.e working directory) for beliefConf.pl file");
+	 }	
+    }
 	
-	static String PortRangeCorrection(String port)
-	{
+    static String PortRangeCorrection(String port)
+    {
 		int count = port.length();
 		String ret = "";
 		for(int x = 0; x < count; x++){
@@ -76,9 +76,10 @@ public class InitBelief {
 			}			
 		}
 		return ret;
-	}
+    }
 
-	static public void CreateBelief(ArrayList<String> NACL_Entry) {
+    static public void CreateBelief(ArrayList<String> NACL_Entry) 
+    {
 	     try {	    	   
 	            PrintStream myFile = new PrintStream(new FileOutputStream("beliefConf.pl", true));         
 	            try {
@@ -102,5 +103,5 @@ public class InitBelief {
 	         catch(IOException ex) {
 	            ex.printStackTrace();
 	         }
-	  }
+     }
 }
