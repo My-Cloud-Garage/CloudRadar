@@ -1,0 +1,12 @@
+use "CloudAgent.jar" as environment with region = "us-east-2".
+
+define awsAgentNacl as agent 
+{
+    use CloudInit as init. 
+	use CloudMain as main.
+	use CloudEvent as event.	
+}
+
+launchpolicy {
+   when * launch awsAgentNacl.
+}

@@ -1,0 +1,5 @@
+use cloudKnowledge as knowledge.
+
+define logfileAlert (TRAFFIC, ID, IP, ProtocolAction, FROMPORT, TOPORT, PlaceHolder, FlagType) with
+	pre{ true }
+	post{ true }

@@ -1,0 +1,11 @@
+use cloudKnowledge as knowledge.
+
+module CloudEvent {	
+		forall percept (naclPercept(AclId, IP, IngressEgress, Action, NaclNum, PortFrom, PortTo, BeliefType), BeliefType = "generated"), 
+		  bel(not(initialNacl(AclId, IP, IngressEgress, Action, NaclNum, PortFrom, PortTo)))
+			do insert (initialNacl(AclId, IP, IngressEgress, Action, NaclNum, PortFrom, PortTo)).
+		
+		forall percept (naclPercept(AclId, IP, IngressEgress, Action, NaclNum, PortFrom, PortTo, BeliefType), BeliefType = "nongenerated"), 
+		  bel(not(initialNacl(AclId, IP, IngressEgress, Action, NaclNum, PortFrom, PortTo)))
+			do adopt (initialNacl(AclId, IP, IngressEgress, Action, NaclNum, PortFrom, PortTo)).
+}
