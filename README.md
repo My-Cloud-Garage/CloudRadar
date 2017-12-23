@@ -20,7 +20,7 @@
 
 
 
-*Note: We are making a slight change to how GOAL Agent is generally written. Basically, instead of creating a 'belief.pl' file
+***Note***: *We are making a slight change to how GOAL Agent is generally written. Basically, instead of creating a 'belief.pl' file
 from the start, we're letting the EIS (Environment Integration Standard) Java program create the belief file if no initial 
 belief.pl file is found, thereby rendering 'initial' beliefs optional.*
 
