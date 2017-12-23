@@ -1,8 +1,10 @@
-### CloudRadar Open Source Project
-#### Our Goal is to create a free tool (CloudRadar Multi Agent) that helps users have more visibility to their security settings/changes
-#### in Cloud Service Providers like AWS, Azure, Google Cloud, Rack Space, etc. At the end of the project CloudRadar Agent will:
+                                                       ### CloudRadar Open Source Project
 
-* Scan and take snapshots of a user's security settings
+### Project objective: 
+      To create a free tool (CloudRadar Multi Agent) that helps users have extra visibility to their security settings/change 
+      in Cloud Service Providers like AWS, Azure, Google Cloud, Rack Space, etc. At the end of the project CloudRadar Agent will:
+
+     * Scan and take snapshots of a user's security settings
 * Notify the account owner (user) if and when a change or potential security hole is identified via an interface (Phone App, Web Interface)
 * Create graphical maps of old vs new security changes to help the user contextualize the effect of the change
 * Request an "allow" vs "deny" prompt from the user to either keep the change or have it removed (return to status quo)
