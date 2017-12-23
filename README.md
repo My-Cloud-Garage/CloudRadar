@@ -8,7 +8,7 @@
 * Request an "allow" vs "deny" prompt from the user to either keep the change or have it removed (return to status quo)
 
 
-CloudRadar will completed using #GOAL# Agent framework (Check out GOAL tutorial: https://goalapl.atlassian.net/wiki/spaces/GOAL/overview?mode=global) 
+### Note: CloudRadar will completed using #GOAL# Agent framework (Check out GOAL tutorial: https://goalapl.atlassian.net/wiki/spaces/GOAL/overview?mode=global) 
 
 Note: We are making a slight change to how GOAL Agent is generally written. Basically, instead of creating a 'belief.pl' file
 from the start, we're letting the EIS (Environment Integration Standard) Java program create the belief file if no initial 
