@@ -1,0 +1,11 @@
+use cloudKnowledge as knowledge.
+use logfileAlert as actionspec.
+
+% exit = nogoals.
+exit = never.
+
+module CloudMain {	
+			forall goal(initialNacl(AclId, IP, IngressEgress, Action, NaclNum, PortFrom, PortTo)) 
+			 do logfileAlert(IngressEgress, AclId, IP, Action, PortFrom, PortTo, NaclNum, "0") + 
+			 insert(initialNacl(AclId, IP, IngressEgress, Action, NaclNum, PortFrom, PortTo)) + print("Goal Achieved").					
+}

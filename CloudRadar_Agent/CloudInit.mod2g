@@ -1,0 +1,7 @@
+
+use cloudKnowledge as knowledge.
+use beliefConf as beliefs.
+
+module CloudInit {
+	if true then log (bb).	
+}
