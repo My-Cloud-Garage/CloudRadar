@@ -16,7 +16,7 @@
 
 
 
-#### NOTE:  CloudRadar will completed using #GOAL# Agent framework (Check out GOAL tutorial: https://goalapl.atlassian.net/wiki/spaces/GOAL/overview?mode=global) 
+#### NOTE:  CloudRadar will completed using #GOAL# Agent framework (Check out GOAL tutorial: [GOAL Framework url](https://goalapl.atlassian.net/wiki/spaces/GOAL/overview?mode=global)).
 
 
 
