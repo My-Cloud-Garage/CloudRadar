@@ -26,7 +26,7 @@ belief.pl file is found, thereby rendering 'initial' beliefs optional.*
 
 
 #### We shall be using the following frameworks/languages for the Agent and it's interface:
-     Angular, javascript, and sms/twilio
+     Angular, Javascript, and sms/twilio
 
 
 ##### For more info about CloudRadar and/or how to contibute to the project please email better.world.cloud@gmail.com and meandev2@gmail.com.
