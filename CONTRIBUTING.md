@@ -9,4 +9,4 @@ The Agent codes in this repository is licensed under the Apache License 2.0.
 Before we can accept and publish your code you have to sign a Contributor License Agreement (CLA).
 
 ***NOTE***: Only original source code from you and other people that have signed the CLA can be accepted into the repository.
-### Contributor License Agreements: Coming soon!
+### For Contributor License Agreements (CLA) please see CLA.pdf or click [here](https://github.com/My-Cloud-Garage/CloudRadar/blob/master/CLA.pdf) to download CLA file.
