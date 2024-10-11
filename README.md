@@ -2,7 +2,7 @@
 
 ### Project objective: 
       To create a free tool (CloudRadar Multi Agent) that helps users have extra visibility to their security 
-      settings/change in Cloud Service Providers like AWS, Azure, Google Cloud, Rack Space, etc. At the end 
+      settings/change in AWS Cloud (Azure, Google Cloud, and Rack Space integration to be implemented soon!) At the end 
       of the project CloudRadar Agent will:
       
            1.  Scan and take snapshots of a user's security settings
