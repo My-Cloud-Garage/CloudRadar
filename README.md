@@ -6,7 +6,7 @@
       of the project CloudRadar Agent will:
       
            1.  Scan and take snapshots of a user's security settings
-           2.  Notify the account owner (user) if and when a change or potential security hole is 
+           2.  Notify the account owner (user) if and when a change or potential security gap is 
                identified via an interface (Phone App, Web Interface)
            3.  Create graphical maps of old vs new security changes to help the user contextualize the 
                effect of the change
